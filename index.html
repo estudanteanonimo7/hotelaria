@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBOYS HOTEIS - Seu descanso começa aqui</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #000000;
+      --secondary: #1fe7da;
+      --dark: #292F36;
+      --light: #F7FFF7;
+      --accent: #FFE66D;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+    }
+
+    .suporte-btn {
+      padding: 0.8rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--dark);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .suporte-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .container {
+      padding: 3rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .lista-hoteis h3 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+    }
+
+    .lista-hoteis h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .hoteis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .hotel {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .hotel:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .hotel-img-container {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hotel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .hotel:hover img {
+      transform: scale(1.05);
+    }
+
+    .hotel-info {
+      padding: 1.5rem;
+    }
+
+    .hotel h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .hotel p {
+      margin-bottom: 0.8rem;
+      color: #666;
+    }
+
+    .hotel p:last-of-type {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .hotel button {
+      padding: 0.8rem;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .hotel button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .rating {
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .rating i {
+      margin-right: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .hoteis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="logo">BADBOYS HOTEIS</h1>
+    <button class="suporte-btn"
+      onclick="window.location.href='mailto:kaiohenriqwe07@gmail.com?subject=Suporte BADBOYS HOTEIS&body=Olá, gostaria de tirar dúvidas sobre...'">
+      <i class="fas fa-headset"></i> SUPORTE
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="lista-hoteis">
+      <h3>Nossos Hotéis Disponíveis</h3>
+
+      <div class="hoteis-grid">
+        <div class="hotel">
+          <div class="hotel-img-container">
+            <img src='https://i.postimg.cc/T36DVXnM/hotelbrasil.jpg' alt='Hotel Brasil'>
+          </div>
+          <div class="hotel-info">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h4>Hotel Brasil</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Presidente Dutra - MA</p>
+            <p>Diária: R$220</p>
+            <button
+              onclick="window.location.href='https://wa.me/5599991461835?text=Olá,%20gostaria%20de%20marcar%20uma%20diária%20no%20Hotel%20Brasil'">
+              <i class="fab fa-whatsapp"></i> Reservar Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <div class="hotel-img-container">
+            <img src='https://i.postimg.cc/KcCqyRhP/belchior.jpg' alt='Hotel Belchior Palace'>
+          </div>
+          <div class="hotel-info">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Hotel Belchior Palace</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Barra do Corda - MA</p>
+            <p>Diária: R$450</p>
+            <button
+              onclick="window.location.href='https://wa.me/5599991461835?text=Olá,%20gostaria%20de%20marcar%20uma%20diária%20no%20Hotel%20Palace'">
+              <i class="fab fa-whatsapp"></i> Reservar Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <div class="hotel-img-container">
+            <img src='https://i.postimg.cc/5ym6pXwh/Premier.jpg' alt='Hotel Premier'>
+          </div>
+          <div class="hotel-info">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <h4>Hotel Premier</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Balsas - MA</p>
+            <p>Diária: R$500</p>
+            <button
+              onclick="window.location.href='https://wa.me/5599991461835?text=Olá,%20gostaria%20de%20marcar%20uma%20diária%20no%20Hotel%20Premier'">
+              <i class="fab fa-whatsapp"></i> Reservar Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <div class="hotel-img-container">
+            <img src='https://i.postimg.cc/qB2CBm01/rio-poti.webp' alt='Hotel Rio Poty'>
+          </div>
+          <div class="hotel-info">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Hotel Rio Poty</h4>
+            <p><i class="fas fa-map-marker-alt"></i> São Luis - MA</p>
+            <p>Diária: R$700</p>
+            <button
+              onclick="window.location.href='https://wa.me/5599991461835?text=Olá,%20gostaria%20de%20marcar%20uma%20diária%20no%20Hotel%20Rio%20Poty'">
+              <i class="fab fa-whatsapp"></i> Reservar Agora
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
